@@ -1,6 +1,6 @@
 # Advanced-MonoInspector
 
-Unity Asset that exposes properties and methods of MonoBehaviour. You can expose them to inspector simply by using specific attribute.
+Unity Asset that exposes properties and methods of MonoBehaviour in inspector. You can expose them to inspector simply by using specific attribute.
 
 It makes your test and debugging easily. Also it can enhance the encapsulation.
 
