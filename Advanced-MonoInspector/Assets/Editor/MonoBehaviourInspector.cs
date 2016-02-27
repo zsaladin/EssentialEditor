@@ -22,7 +22,7 @@ public class MonoBehaviourInspector : Editor
         if (exposedProperties.Length > 0)
         {
             EditorGUILayout.Separator();
-            EditorGUILayout.LabelField("Propertyies");
+            EditorGUILayout.LabelField("Properties");
             foreach (PropertyInfo propertyInfo in exposedProperties)
             {
                 if (propertyInfo.IsDefined(typeof(ExposePropertyAttribute), true))
