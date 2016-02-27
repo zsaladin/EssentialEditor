@@ -2,7 +2,7 @@
 
 Unity Asset that exposes properties and methods of MonoBehaviour to inspector. You can expose them to inspector simply by using specific attribute.
 
-It makes your test and debugging easily. Also it can enhance the encapsulation.
+It makes your test and debugging easy. Also it can enhance the encapsulation.
 
 Read this in other languages: English, [한국어](README_koKR.md)
 
