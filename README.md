@@ -31,7 +31,7 @@ MonoBehaviour 스크립트에 Property, Method를 노출 시켜주는 Asset 입�
         set;
     }
 
-![alt tag](https://cloud.githubusercontent.com/assets/6466389/13372864/8bc84a62-dd99-11e5-8db7-8188545ca608.png)
+![alt tag](https://cloud.githubusercontent.com/assets/6466389/13372902/b35ee1ce-dd9b-11e5-96ef-753477637651.png)
 
 
 ####[ExposeMethod]
