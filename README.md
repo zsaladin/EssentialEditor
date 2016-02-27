@@ -56,4 +56,4 @@ MonoBehaviour 스크립트에 Property, Method를 노출 시켜주는 Asset 입�
         return w;
     }
     
-    ![alt tag](https://cloud.githubusercontent.com/assets/6466389/13372890/ddba00c6-dd9a-11e5-86a4-82a9302c0e07.png)
+![alt tag](https://cloud.githubusercontent.com/assets/6466389/13372890/ddba00c6-dd9a-11e5-86a4-82a9302c0e07.png)
