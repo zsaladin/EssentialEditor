@@ -18,7 +18,7 @@ public class MonoBehaviourInspector : Editor
         Type type = target.GetType();
 
         var exposedProperties = type.GetProperties(BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Instance).
-            Where(item => item.GetCustomAttributes(typeof(ExposePropertyAttribute), true).Length > 0).ToArray();
+            Where(item => item.IsDefined(typeof(ExposePropertyAttribute), true)).ToArray();
         if (exposedProperties.Length > 0)
         {
             EditorGUILayout.Separator();
@@ -31,7 +31,7 @@ public class MonoBehaviourInspector : Editor
         }
 
         var exposedMethods = type.GetMethods(BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Instance).
-            Where(item => item.GetCustomAttributes(typeof(ExposeMethodAttribute), true).Length > 0).ToArray();
+            Where(item => item.IsDefined(typeof(ExposeMethodAttribute), true)).ToArray();
         if (exposedMethods.Length > 0)
         {
             EditorGUILayout.Separator();
