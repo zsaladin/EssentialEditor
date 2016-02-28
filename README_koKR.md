@@ -33,7 +33,7 @@ Read this in other languages: 한국어, [English](README.md)
         set;
     }
 
-![alt tag](https://cloud.githubusercontent.com/assets/6466389/13372902/b35ee1ce-dd9b-11e5-96ef-753477637651.png)
+![alt tag](https://cloud.githubusercontent.com/assets/6466389/13378360/1fb31380-de47-11e5-8847-d9ae57c93676.png)
 
 
 ####[ExposeMethod]
