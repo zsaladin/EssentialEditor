@@ -1,15 +1,15 @@
 # Advanced-MonoInspector
 
-MonoBehaviour 스크립트에 Property, Method를 노출 시켜주는 Asset 입니다.
-간단한 Attribute 설정으로 Inspector에 해당 스크립트의 Property, Method를 노출 시킬 수 있습니다.
+Unity Asset that exposes properties and methods of MonoBehaviour to inspector. You can expose them to inspector simply by using specific attribute.
 
-이는 테스트 및 디버깅 시 매우 유용하게 사용될 수 있습니다.
-또한 Inspector 노출을 위해 사용했던 Field들을 정리하지 않아 캡슐화가 깨지는 것을 방지할 수 있습니다.
+It makes your test and debugging easy. Also it can enhance the encapsulation.
 
-## 기능
+Read this in other languages: English, [한국어](README_koKR.md)
+
+## How to use
 ####[ExposeProperty] 
 
-해당 Attribute가 설정된 Property는 Inspector에 노출됩니다.
+The properties using this attribute are exposed in inspector.
 
     [ExposeProperty]
     public float Foo
@@ -31,12 +31,12 @@ MonoBehaviour 스크립트에 Property, Method를 노출 시켜주는 Asset 입�
         set;
     }
 
-![alt tag](https://cloud.githubusercontent.com/assets/6466389/13372902/b35ee1ce-dd9b-11e5-96ef-753477637651.png)
+![alt tag](https://cloud.githubusercontent.com/assets/6466389/13378360/1fb31380-de47-11e5-8847-d9ae57c93676.png)
 
 
 ####[ExposeMethod]
 
-해당 Attribute가 설정된 Method는 인스펙터에 노출됩니다. Invoke를 클릭하면 해당 Method를 실행하고, 만약 반환형이 void가 아니라면 결과를 Console 창에 출력해줍니다.
+The methods using this attribute are exposed in inspector. It invokes the method if you click 'Invoke' button. If the return type is not 'void' then the result will be printed in console window.
 
     [ExposeMethod]
     void Foo()
@@ -57,3 +57,10 @@ MonoBehaviour 스크립트에 Property, Method를 노출 시켜주는 Asset 입�
     }
     
 ![alt tag](https://cloud.githubusercontent.com/assets/6466389/13372890/ddba00c6-dd9a-11e5-86a4-82a9302c0e07.png)
+
+## Author
+- Kim Daehee, Game Programmer in Korea.
+- zsaladinz@gmail.com
+
+## License
+- This asset is under MIT License.
