@@ -42,6 +42,8 @@ public class MonoBehaviourInspector : Editor
                     DrawMethod(methodInfo);
             }
         }
+
+        EditorUtility.SetDirty(target);
     }
 
     void DrawProperty(PropertyInfo propertyInfo)
