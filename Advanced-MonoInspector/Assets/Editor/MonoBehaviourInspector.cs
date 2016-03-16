@@ -48,71 +48,85 @@ public class MonoBehaviourInspector : Editor
 
     void DrawProperty(PropertyInfo propertyInfo)
     {
-        if (propertyInfo.GetGetMethod(true) == null)
-            return;
+        try
+        {
+            if (propertyInfo.GetGetMethod(true) == null)
+                return;
 
-        bool hasSetMethod = propertyInfo.GetSetMethod(true) != null;
-        if (hasSetMethod == false)
-            GUI.enabled = false;
+            bool hasSetMethod = propertyInfo.GetSetMethod(true) != null;
+            if (hasSetMethod == false)
+                GUI.enabled = false;
 
-        object value = TypeDrawer.Draw(propertyInfo.PropertyType, propertyInfo.Name, propertyInfo.GetValue(target, null));
+            object value = TypeDrawer.Draw(propertyInfo.PropertyType, propertyInfo.Name, propertyInfo.GetValue(target, null));
 
-        if (hasSetMethod)
-            propertyInfo.SetValue(target, value, null);
+            if (hasSetMethod)
+                propertyInfo.SetValue(target, value, null);
 
-        GUI.enabled = true;
+            GUI.enabled = true;
+        }
+        catch (Exception ex)
+        {
+            EditorGUILayout.LabelField(ex.ToString());
+        }
     }
 
     void DrawMethod(MethodInfo methodInfo)
     {
-        var impossibleParams = methodInfo.GetParameters().Where(item =>
-        item.ParameterType != typeof(int) &&
-        item.ParameterType != typeof(float) &&
-        item.ParameterType != typeof(string) &&
-        item.ParameterType != typeof(bool) &&
-        item.ParameterType != typeof(Vector2) &&
-        item.ParameterType != typeof(Vector3) &&
-        item.ParameterType != typeof(Vector4) &&
-        item.ParameterType.IsEnum == false).ToArray();
-
-        if (impossibleParams.Length > 0)
-            return;
-
-        EditorGUILayout.BeginHorizontal();
-        EditorGUILayout.PrefixLabel(methodInfo.Name);
-
-        List<object> methodParams = null;
-        if (_methodParamsDict.TryGetValue(methodInfo, out methodParams) == false)
+        try
         {
-            methodParams = new List<object>();
-            _methodParamsDict.Add(methodInfo, methodParams);
-        }
+            var impossibleParams = methodInfo.GetParameters().Where(item =>
+            item.ParameterType != typeof(int) &&
+            item.ParameterType != typeof(float) &&
+            item.ParameterType != typeof(string) &&
+            item.ParameterType != typeof(bool) &&
+            item.ParameterType != typeof(Vector2) &&
+            item.ParameterType != typeof(Vector3) &&
+            item.ParameterType != typeof(Vector4) &&
+            item.ParameterType.IsEnum == false).ToArray();
 
-        EditorGUILayout.BeginVertical();
+            if (impossibleParams.Length > 0)
+                return;
 
-        ParameterInfo[] parameters = methodInfo.GetParameters();
-        for (int i = 0; i < parameters.Length; ++i)
-        {
-            if (methodParams.Count <= i)
+            EditorGUILayout.BeginHorizontal();
+            EditorGUILayout.PrefixLabel(methodInfo.Name);
+
+            List<object> methodParams = null;
+            if (_methodParamsDict.TryGetValue(methodInfo, out methodParams) == false)
             {
-                if (parameters[i].ParameterType.IsValueType)
-                    methodParams.Add(Activator.CreateInstance(parameters[i].ParameterType));
-                else
-                    methodParams.Add(null);
+                methodParams = new List<object>();
+                _methodParamsDict.Add(methodInfo, methodParams);
             }
 
-            methodParams[i] = TypeDrawer.Draw(parameters[i].ParameterType, parameters[i].Name, methodParams[i]);
-        }
+            EditorGUILayout.BeginVertical();
 
-        if (GUILayout.Button("Invoke"))
+            ParameterInfo[] parameters = methodInfo.GetParameters();
+            for (int i = 0; i < parameters.Length; ++i)
+            {
+                if (methodParams.Count <= i)
+                {
+                    if (parameters[i].ParameterType.IsValueType)
+                        methodParams.Add(Activator.CreateInstance(parameters[i].ParameterType));
+                    else
+                        methodParams.Add(null);
+                }
+
+                methodParams[i] = TypeDrawer.Draw(parameters[i].ParameterType, parameters[i].Name, methodParams[i]);
+            }
+
+            if (GUILayout.Button("Invoke"))
+            {
+                object returnValue = methodInfo.Invoke(target, methodParams.ToArray());
+                if (returnValue != null)
+                    Debug.Log(returnValue);
+            }
+
+            EditorGUILayout.EndVertical();
+
+            EditorGUILayout.EndHorizontal();
+        }
+        catch(Exception ex)
         {
-            object returnValue = methodInfo.Invoke(target, methodParams.ToArray());
-            if (returnValue != null)
-                Debug.Log(returnValue);
+            EditorGUILayout.LabelField(ex.ToString());
         }
-
-        EditorGUILayout.EndVertical();
-
-        EditorGUILayout.EndHorizontal();
     }
 }
