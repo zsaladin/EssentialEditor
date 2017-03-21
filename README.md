@@ -7,7 +7,7 @@ It makes your test and debugging easy. Also it can enhance the encapsulation.
 Read this in other languages: English, [한국어](README_koKR.md)
 
 ## How to use
-####[ExposeProperty] 
+#### [ExposeProperty] 
 
 The properties using this attribute are exposed in inspector.
 
@@ -34,7 +34,7 @@ The properties using this attribute are exposed in inspector.
 ![alt tag](https://cloud.githubusercontent.com/assets/6466389/13378360/1fb31380-de47-11e5-8847-d9ae57c93676.png)
 
 
-####[ExposeMethod]
+#### [ExposeMethod]
 
 The methods using this attribute are exposed in inspector. It invokes the method if you click 'Invoke' button. If the return type is not 'void' then the result will be printed in console window.
 
