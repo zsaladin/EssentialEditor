@@ -1,5 +1,6 @@
-Advanced-MonoInspector/Library
-Advanced-MonoInspector/Temp
-Advanced-MonoInspector/CustomPropertyDrawers.CSharp.csproj
-Advanced-MonoInspector/CustomPropertyDrawers.CSharp.Editor.csproj
-Advanced-MonoInspector/CustomPropertyDrawers.sln
+*.csproj
+Project/Project.sln
+Project/.vs/
+Project/Library/AnnotationManager
+Project/Library/
+Project/Temp/
