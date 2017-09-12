@@ -13,26 +13,27 @@ Read this in other languages: 한국어, [English](README.md)
 
 해당 Attribute가 설정된 Property는 Inspector에 노출됩니다.
 
-    [ExposeProperty]
-    public float Foo
-    {
-        get { return foo; }
-        set { foo = value; }
-    }
+```C#
+[ExposeProperty]
+public float Foo
+{
+    get { return foo; }
+    set { foo = value; }
+}
 
-    [ExposeProperty]
-    public float Goo
-    {
-        get { return foo; }
-    }
+[ExposeProperty]
+public float Goo
+{
+    get { return foo; }
+}
 
-    [ExposeProperty]
-    public Vector3 Hoo
-    {
-        get;
-        set;
-    }
-
+[ExposeProperty]
+public Vector3 Hoo
+{
+    get;
+    set;
+}
+```
 ![alt tag](https://cloud.githubusercontent.com/assets/6466389/13378360/1fb31380-de47-11e5-8847-d9ae57c93676.png)
 
 
@@ -40,23 +41,25 @@ Read this in other languages: 한국어, [English](README.md)
 
 해당 Attribute가 설정된 Method는 인스펙터에 노출됩니다. Invoke를 클릭하면 해당 Method를 실행하고, 만약 반환형이 void가 아니라면 결과를 Console 창에 출력해줍니다.
 
-    [ExposeMethod]
-    void Foo()
-    {
-        
-    }
+```C#
+[ExposeMethod]
+void Foo()
+{
 
-    [ExposeMethod]
-    int Goo()
-    {
-        return 1;
-    }
+}
 
-    [ExposeMethod]
-    string Hoo(int x, float y, Vector3 z, string w)
-    {
-        return w;
-    }
+[ExposeMethod]
+int Goo()
+{
+    return 1;
+}
+
+[ExposeMethod]
+string Hoo(int x, float y, Vector3 z, string w)
+{
+    return w;
+}
+```
     
 ![alt tag](https://cloud.githubusercontent.com/assets/6466389/13372890/ddba00c6-dd9a-11e5-86a4-82a9302c0e07.png)
 
