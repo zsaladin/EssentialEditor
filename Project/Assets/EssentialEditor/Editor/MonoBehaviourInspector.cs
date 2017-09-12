@@ -24,7 +24,7 @@ namespace EssentialEditor.Internal
             if (exposedProperties.Length > 0)
             {
                 EditorGUILayout.Separator();
-                EditorGUILayout.LabelField("Properties");
+                EditorGUILayout.LabelField("Properties", EditorStyles.boldLabel);
                 foreach (PropertyInfo propertyInfo in exposedProperties)
                 {
                     if (propertyInfo.IsDefined(typeof(ExposePropertyAttribute), true))
@@ -37,7 +37,7 @@ namespace EssentialEditor.Internal
             if (exposedMethods.Length > 0)
             {
                 EditorGUILayout.Separator();
-                EditorGUILayout.LabelField("Methods");
+                EditorGUILayout.LabelField("Methods", EditorStyles.boldLabel);
                 foreach (MethodInfo methodInfo in exposedMethods)
                 {
                     if (methodInfo.IsDefined(typeof(ExposeMethodAttribute), true))
