@@ -36,6 +36,8 @@ namespace EssentialEditor.Example
             get { return foo1; }
         }
 
+        [ExposeProperty]
+        private Object Foo5 { get; set; }
 
         [ExposeMethod]
         void Goo1()
@@ -47,6 +49,24 @@ namespace EssentialEditor.Example
         bool Goo2(int x, int y)
         {
             return x == 0;
+        }
+
+        [ExposeMethod]
+        string Goo3(Object obj)
+        {
+            if (obj == null)
+                return "Assign any object as an arguement";
+            
+            return obj.name;
+        }
+
+        [ExposeMethod]
+        string Goo4()
+        {
+            if (Foo5 == null)
+                return "Assign any object to 'Foo5' property";
+
+            return Foo5.name;
         }
     }
 }

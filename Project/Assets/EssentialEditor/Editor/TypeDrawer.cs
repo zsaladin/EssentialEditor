@@ -41,6 +41,10 @@ namespace EssentialEditor.Internal
             {
                 value = EditorGUILayout.Vector4Field(name, (Vector4)getValue);
             }
+            else if (typeof(UnityEngine.Object) == type)
+            {
+                value = EditorGUILayout.ObjectField(name, (UnityEngine.Object)getValue, typeof(UnityEngine.Object), true);
+            }
             else if (type.IsEnum)
             {
                 if (type.IsDefined(typeof(FlagsAttribute), true))
