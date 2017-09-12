@@ -13,6 +13,10 @@ namespace EssentialEditor.Internal
             {
                 value = EditorGUILayout.IntField(name, (int)getValue);
             }
+            else if (typeof(long) == type)
+            {
+                value = EditorGUILayout.LongField(name, (long)getValue);
+            }
             else if (typeof(float) == type)
             {
                 value = EditorGUILayout.FloatField(name, (float)getValue);

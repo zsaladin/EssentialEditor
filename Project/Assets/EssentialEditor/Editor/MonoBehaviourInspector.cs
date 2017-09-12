@@ -78,6 +78,7 @@ namespace EssentialEditor.Internal
             {
                 var impossibleParams = methodInfo.GetParameters().Where(item =>
                 item.ParameterType != typeof(int) &&
+                item.ParameterType != typeof(long) &&
                 item.ParameterType != typeof(float) &&
                 item.ParameterType != typeof(string) &&
                 item.ParameterType != typeof(bool) &&
