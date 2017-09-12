@@ -59,7 +59,7 @@ string Hoo(int x, float y, Vector3 z, string w)
 ![alt tag](https://cloud.githubusercontent.com/assets/6466389/13372890/ddba00c6-dd9a-11e5-86a4-82a9302c0e07.png)
 
 ## Author
-- Kim Daehee, Game Programmer in Korea.
+- Kim Daehee, Software engineer in Korea.
 - zsaladinz@gmail.com
 
 ## License
