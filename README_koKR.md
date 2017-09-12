@@ -1,4 +1,4 @@
-# Advanced-MonoInspector
+# Essential Editor
 
 MonoBehaviour 스크립트에 Property, Method를 노출 시켜주는 Unity Asset 입니다.
 간단한 Attribute 설정으로 Inspector에 해당 스크립트의 Property, Method를 노출 시킬 수 있습니다.
