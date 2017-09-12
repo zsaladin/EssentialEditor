@@ -37,7 +37,7 @@ namespace EssentialEditor.Example
         }
 
         [ExposeProperty]
-        private Object Foo5 { get; set; }
+        private GameObject Foo5 { get; set; }
 
         [ExposeMethod]
         void Goo1()
@@ -52,21 +52,21 @@ namespace EssentialEditor.Example
         }
 
         [ExposeMethod]
-        string Goo3(Object obj)
+        string Goo3(Camera camera)
         {
-            if (obj == null)
-                return "Assign any object as an arguement";
+            if (camera == null)
+                return "Assign any object as an argument";
             
-            return obj.name;
+            return camera.name;
         }
 
         [ExposeMethod]
-        string Goo4()
+        string Goo4(Example exampleScript)
         {
-            if (Foo5 == null)
-                return "Assign any object to 'Foo5' property";
+            if (exampleScript == null)
+                return "Assign itself as an argument.";
 
-            return Foo5.name;
+            return exampleScript.name;
         }
     }
 }

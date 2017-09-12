@@ -85,8 +85,8 @@ namespace EssentialEditor.Internal
                 item.ParameterType != typeof(Vector2) &&
                 item.ParameterType != typeof(Vector3) &&
                 item.ParameterType != typeof(Vector4) &&
-                item.ParameterType != typeof(UnityEngine.Object) &&
-                item.ParameterType.IsEnum == false).ToArray();
+                item.ParameterType.IsEnum == false &&
+                typeof(UnityEngine.Object).IsAssignableFrom(item.ParameterType) == false).ToArray();
 
                 if (impossibleParams.Length > 0)
                     return;

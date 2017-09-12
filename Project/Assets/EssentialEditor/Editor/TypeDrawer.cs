@@ -41,16 +41,16 @@ namespace EssentialEditor.Internal
             {
                 value = EditorGUILayout.Vector4Field(name, (Vector4)getValue);
             }
-            else if (typeof(UnityEngine.Object) == type)
-            {
-                value = EditorGUILayout.ObjectField(name, (UnityEngine.Object)getValue, typeof(UnityEngine.Object), true);
-            }
             else if (type.IsEnum)
             {
                 if (type.IsDefined(typeof(FlagsAttribute), true))
                     value = EditorGUILayout.EnumMaskField(name, (Enum)getValue);
                 else
                     value = EditorGUILayout.EnumPopup(name, (Enum)getValue);
+            }
+            else if (typeof(UnityEngine.Object).IsAssignableFrom(type))
+            {
+                value = EditorGUILayout.ObjectField(name, (UnityEngine.Object)getValue, type, true);
             }
             return value;
         }
