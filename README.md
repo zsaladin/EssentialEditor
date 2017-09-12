@@ -1,4 +1,4 @@
-# Advanced-MonoInspector
+# Essential Editor
 
 Unity Asset that exposes properties and methods of MonoBehaviour to inspector. You can expose them to inspector simply by using specific attribute.
 
