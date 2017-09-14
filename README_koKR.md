@@ -4,7 +4,7 @@ MonoBehaviour 스크립트에 Property, Method를 노출 시켜주는 Unity Asse
 간단한 Attribute 설정으로 Inspector에 해당 스크립트의 Property, Method를 노출 시킬 수 있습니다.
 
 이는 테스트 및 디버깅 시 매우 유용하게 사용될 수 있습니다.
-또한 Inspector 노출을 위해 사용했던 Field들을 정리하지 않아 캡슐화가 깨지는 것을 방지할 수 있습니다.
+또한 Inspector에 노출하여 값을 모니터링 하기위해 'public', 'SerializedField'로 선언된 Field 필요가 없어 캡슐화가 깨지는 것을 방지하고 불필요한 변수 선언을 줄일 수 있습니다.
 
 Read this in other languages: 한국어, [English](README.md)
 
