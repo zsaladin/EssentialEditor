@@ -12,6 +12,8 @@ Read this in other languages: English, [한국어](README_koKR.md)
 
 The methods using this attribute are exposed in inspector. It invokes the method if you click 'Invoke' button. If the return type is not 'void' then the result will be printed in console window.
 ```C#
+using EssentialEditor;
+
 [ExposeMethod]
 void Foo()
 {
@@ -36,6 +38,8 @@ string Hoo(int x, float y, Vector3 z, string w)
 
 The properties using this attribute are exposed in inspector.
 ```C#
+using EssentialEditor;
+
 [ExposeProperty]
 public float Foo
 {
