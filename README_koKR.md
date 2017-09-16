@@ -14,6 +14,8 @@ Read this in other languages: 한국어, [English](README.md)
 해당 Attribute가 설정된 Method는 인스펙터에 노출됩니다. Invoke를 클릭하면 해당 Method를 실행하고, 만약 반환형이 void가 아니라면 결과를 Console 창에 출력해줍니다.
 
 ```C#
+using EssentialEditor;
+
 [ExposeMethod]
 void Foo()
 {
@@ -40,6 +42,8 @@ string Hoo(int x, float y, Vector3 z, string w)
 해당 Attribute가 설정된 Property는 Inspector에 노출됩니다.
 
 ```C#
+using EssentialEditor;
+
 [ExposeProperty]
 public float Foo
 {
